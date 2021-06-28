@@ -1,10 +1,63 @@
 #include <iostream>
+#include "olcNoiseMaker.h"
 
 using namespace std;
 
+atomic<double> dFrequencyOutput = 0.0;
+
+double MakeNoise(double dTime)
+{
+	double dOutput = 1.0 * (sin(dFrequencyOutput * 2 * 3.14149 * dTime) + sin((dFrequencyOutput * 20.0) * 2 * 3.14149 * dTime));
+
+	return dOutput * 0.5;
+
+
+	/*if (dOutput > 0.0)
+		return 0.2;
+	else
+		return -0.2;*/
+		
+
+
+	//return 0.5 * sin(220.0 * 2 * 3.14159 * dTime);
+}
+
 int main()
 {
-	cout << "teste git fffff";
+
+	vector<wstring> devices = olcNoiseMaker<short>::Enumerate();
+	for (auto d : devices) wcout << "Encontrado: " << d << endl;
+
+
+	olcNoiseMaker<short> sound(devices[0], 44100, 1, 8, 512);
+
+	sound.SetUserFunction(MakeNoise);
+
+	double dOctaveBaseFrequency = 110.0;
+	double d12thRootOf2 = pow(2.0, 1.0 / 12.0);
+
+
+	while (1) {
+
+
+
+		bool bkeyPressed = false;
+
+		for (int k = 0; k < 15; k++)
+		{
+
+			if (GetAsyncKeyState((unsigned char)("ZSXCFVGBNJMK\xbcL\xbe"[k])) & 0x8000) {
+				dFrequencyOutput = dOctaveBaseFrequency * pow(d12thRootOf2, k);
+				bkeyPressed = true;
+			}
+		}
+
+		if (!bkeyPressed)
+		{
+			dFrequencyOutput = 0.0;
+		}
+
+	}
 
 	return 0;
 }
