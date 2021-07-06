@@ -1,6 +1,8 @@
-﻿Build started 28/06/2021 14:49:42.
-Logging verbosity is set to: Normal.     1>Project "D:\Projetos\GIT\vs2019\FPSCpp\FPSCpp.vcxproj" on node 2 (Build target(s)).
-     1>InitializeBuildStatus:
+﻿Build started 29/06/2021 09:45:23.
+Logging verbosity is set to: Normal.     1>Project "D:\Projetos\GIT\vs2019\FPSCpp\FPSCpp.vcxproj" on node 3 (Rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\FPSCpp.tlog\FPSCpp.lastbuildstate".
+       InitializeBuildStatus:
          Creating "Debug\FPSCpp.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x86\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc142.pdb" /Gd /TP /analyze- /FC /errorReport:prompt source.cpp
@@ -13,11 +15,11 @@ Logging verbosity is set to: Normal.     1>Project "D:\Projetos\GIT\vs2019\FPSCp
        FinalizeBuildStatus:
          Deleting file "Debug\FPSCpp.tlog\unsuccessfulbuild".
          Touching "Debug\FPSCpp.tlog\FPSCpp.lastbuildstate".
-     1>Done Building Project "D:\Projetos\GIT\vs2019\FPSCpp\FPSCpp.vcxproj" (Build target(s)).
+     1>Done Building Project "D:\Projetos\GIT\vs2019\FPSCpp\FPSCpp.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-       "D:\Projetos\GIT\vs2019\FPSCpp\FPSCpp.vcxproj" (Build target) (1) ->
+       "D:\Projetos\GIT\vs2019\FPSCpp\FPSCpp.vcxproj" (Rebuild target) (1) ->
        (ClCompile target) -> 
          D:\Projetos\GIT\vs2019\FPSCpp\source.cpp(223,26): warning C4305: 'initializing': truncation from 'double' to 'float'
          D:\Projetos\GIT\vs2019\FPSCpp\source.cpp(232,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
@@ -25,4 +27,4 @@ Build succeeded.
     2 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:02.63
+Time Elapsed 00:00:01.97
