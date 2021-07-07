@@ -87,17 +87,19 @@ int main()
 	int nCurrentY = 0;
 
 	bool bKey[4];
-	bool bRotateHold;
+	bool bRotateHold = false;
 
+	int nSpeed = 20;
+	int nSpeedCounter = 0;
+	bool bForceDown= false;
 
 	while (!bGameOver)
 	{
 		//TIMING
 
 		this_thread::sleep_for(50ms);
-
-
-
+		nSpeedCounter++;
+		bForceDown = (nSpeedCounter == nSpeed);
 
 		//INPUT
 		for (int k = 0; k < 4; k++)
@@ -112,8 +114,9 @@ int main()
 
 		nCurrentY += (bKey[2] && DoesPieceFit(nCurrentPiece, nCurrentRotation, nCurrentX, nCurrentY + 1)) ? 1 : 0;
 
-		nCurrentRotation += (bKey[3] && DoesPieceFit(nCurrentPiece, nCurrentRotation + 1, nCurrentX, nCurrentY)) ? 1 : 0;
-			
+		nCurrentRotation += ((bKey[3] && !bRotateHold) && DoesPieceFit(nCurrentPiece, nCurrentRotation + 1, nCurrentX, nCurrentY)) ? 1 : 0;
+	
+		bRotateHold = bKey[3];
 
 
 		//RENDER OUTPUT

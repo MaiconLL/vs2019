@@ -1,1 +1,2 @@
 D:\Projetos\c++\TetrisCpp\TetrisCpp\Debug\TetrisCpp.exe
+D:\Projetos\GIT\vs2019\TetrisCpp\TetrisCpp\Debug\TetrisCpp.exe
